@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+    <title> Profile Form</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    
+        <div class="form-centre "> 
+                
+                
+                <div class="form-bg">
+                  <div class="title"> <h2>Profile</h2></div>                   
+                    <div class="flex-center">
+                      <p>{{out}}</p>
+                        <p>{{fail}}</p>
+                        <div class="float-left">
+                            <label >First Name:</label><br> <br><br>
+                            <label >Last Name:</label><br> <br><br>
+                            <label >Department:</label><br> <br>
+                            <label >Stream:</label><br> <br>
+                            <label >Username:</label><br> <br><br>
+                            <label >Email:</label><br> <br><br>
+                            <label >Contact:</label><br> <br>
+                            
+                        </div>
+                       <div class="float-right">
+                        
+                        
+                          {% for x in display %}
+                          {% csrf_token %} 
+                          <!-- <input type="text" value="{{x.fname}}"> -->
+                            <label >{{x.fname}}</label><br> <br><br>
+                            <label >{{x.lname}}</label><br> <br><br>
+                            <label >{{x.dptm}}</label><br> <br>
+                            <label >{{x.stream}}</label><br> <br>
+                            <label >{{x.username}}</label><br> <br><br>
+                            <label >{{x.email}}</label><br> <br><br>
+                            <label >{{x.mob_no}}</label><br> <br>
+                            {% endfor %}                
+                       </div>                  
+                    </div>
+                     
+    
+       </div>  
+    
+    
+      
+</body>
+</html>

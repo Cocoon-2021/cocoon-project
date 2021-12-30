@@ -1,0 +1,73 @@
+body {
+    background-image: url('https://www.nordangliaeducation.com/-/media/corporate/news-events/studentsacrossnordangliaschoolsachieveexceptionaligcseresults/236206089_4316854535061945_2038653297472643307_n.jpg' );
+}
+
+.form-bg{
+    background-color: rgba(236, 236, 234, 0.616);
+    border-radius: 5px;
+    margin-left: 10px;
+    margin-top: 100px;
+    padding-bottom: 20px;
+
+}
+.form-centre{
+    margin-left: 30%;  
+    margin-right: 30%; 
+    border-radius: 5px;  
+    display: flex;
+    
+}
+.bgcolor{
+    background-color: rgba(197, 194, 178, 0.87)  ;
+    border-radius: 5px;
+    padding: 60px;
+    
+} 
+.btn{
+    color: rgb(255, 255, 255);
+    background-color: rgb(38, 172, 196);;
+    border-radius: 5px;
+    padding: 6px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 50%;
+}
+.btn-login{
+    color: rgb(255, 255, 255);
+    background-color: rgb(70, 196, 38);;
+    border-radius: 5px;
+    padding: 2px;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+.btn:hover {
+    background: rgb(28, 144, 164); }
+.btn:active {
+    background: #144E75; }
+
+.title{
+    padding-top: 20px;
+    margin-left:27%;
+    margin-top: 100px;
+    
+}
+.flex-center{
+    display: flex;
+    margin-top: 20px;
+}
+.float-left{
+    float: left;
+    margin-left: 50px;
+    padding-right: 20px;
+    padding-bottom: 3px;
+    
+}
+.float-right{
+    float: right;
+    padding-bottom: 50px;
+    margin-right: 40px;
+}
+.txtfield{
+    border-radius: 5px;
+    padding: 5px;
+
+}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+    <title> Registration Form</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/validation.js" type='text/javascript'></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    
+        <div class="form-centre ">       
+            <form action="/login/" name="myForm" method="POST" >
+                {% csrf_token %}
+                <div class="form-bg">
+                  <div class="title"> <h2>Student Registration Form</h2></div>                   
+                    <div class="flex-center">
+                        <div class="float-left">
+                            <label >First Name:</label><br> <br><br>
+                            <label >Last Name:</label><br> <br><br>
+                            <label >Department:</label><br> <br>
+                            <label >Stream:</label><br> <br>
+                            <label >Username:</label><br> <br><br>
+                            <label >Password:</label><br> <br><br>
+                            <label >Confirm Password:</label><br> <br>
+                            <label >Email:</label><br> <br><br>
+                            <label >Contact:</label><br> <br>
+                            
+                        </div>
+                       <div class="float-right">
+                            <input type="text" class="txtfield" id="fname" name="fname" placeholder="Enter the first name"  required > <br> <br>
+                            <!-- <p id="fnam"></p> -->
+                            <input type="text" class="txtfield" id="lname" name="lname" placeholder="Enter the last name" required> <br> <br><br>
+                            <select id="dptm" name="dptm" onchange="department_sel(this.value)" required>
+                                <option disabled selected value="0">select one</option>
+                                <option value="Computer">Computer Application </option>
+                                <option value="Commerce">Commerce</option>
+                                <option value="English">English</option>
+                              </select><br> <br>
+                            <select id="stream" name="stream" aria-placeholder="select" >
+                                <option disabled selected>select one</option>
+                                <option value="BCA">BCA</option>
+                                <option value="BBA">BBA</option>
+                                <option value="B.com">B.com</option>
+                              </select><br> <br>
+                              <input type="text" class="txtfield" id="username" name="username" pattern="^(?=.{6,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?![_.])$"onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Must have atleast 6 characters ' : ''); " placeholder="Enter the username" required> <br> <br>
+                              <input type="password" class="txtfield" id="psw" name="psw" pattern="^\S{8,}.\w$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Must have at least 8 characters,One Upper and lowercase,Digits ' : ''); if(this.checkValidity()) form.repwd.pattern = this.value;" placeholder="Enter the password" required> 
+                              <!-- <br> <br>
+                              <i class="fa fa-eye"></i>
+                              <input type="checkbox" onclick="toggle()"> -->
+                              <br> <br>
+                              <input type="password" class="txtfield"id="repwd" name="repwd" pattern="^\S{8,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Please enter the same Password as above' : '');" placeholder="Verify password" required> <br> <br>
+                              <input type="email" class="txtfield" id="emailid" name="email" placeholder="Enter the  email id" required> <br> <br>
+                              <input type="tel"  class="txtfield" id="mobile" name="mobile" pattern="^\S[0-9]+{10,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Wrong Entry' : ''); "  placeholder="Enter the  Contact no." maxlength="10" required> <br> <br>                
+                       </div>                  
+                    </div>
+                    <button class="btn" onclick="validate()">submit</button>
+                    
+                
+                
+            </form>
+    
+       </div>  <!-- form end -->
+    
+    
+       <script language='javascript' type='text/javascript'>
+        function check(input) {
+            if (input.value != document.getElementById('psw').value) {
+                input.setCustomValidity('Password Must be Matching.');
+            } else {
+                // input is valid -- reset the error message
+                input.setCustomValidity('');
+            }
+        }
+
+        function department_sel(val){
+            var x = document.getElementById("dptm").value;
+            if(x===0){
+                alert("Please select department");
+            }
+            
+        }
+                                                          // password toggle
+        // function toggle() {
+        //               var x = document.forms["myForm"]["input"];
+        //               if (x.type === "password") {
+        //                 x.type = "text";
+        //               } else {
+        //                 x.type = "password";
+        //               }
+        //                   }
+            // select tag validation
+           
+    </script>
+    
+</body>
+</html>
